@@ -9,10 +9,6 @@
   border: 1px solid #d3d3d3;
 }
 
-#mydiv {
-    z-index: 10 !important;
-}
-
 .mydivheader {
   padding: 10px;
   cursor: move;
@@ -27,14 +23,14 @@
 
 <p>Click and hold the mouse button down while moving the DIV element</p>
 
-<div id="mydiv" class="mydiv">
+<div id="mydiv" class="mydiv", style="z-index: 10">
   <div id="mydivheader" class="mydivheader">Click here to move</div>
   <p>Move</p>
   <p>this</p>
   <p>DIV</p>
 </div>
 <div id="mydiv2" class="mydiv">
-    <div id="mydivheader2" class="mydivheader">Click here to move</div>
+    <div id="mydiv2header" class="mydivheader">Click here to move</div>
     <p>Move</p>
     <p>this</p>
     <p>DIV</p>
@@ -42,7 +38,11 @@
 
 <script>
 //Make the DIV element draggagle:
-dragElement(document.getElementById("mydiv"));
+elements = document.getElementsByClassName("mydiv")
+for (let index = 0; index < elements.length; index++) {
+    const element = elements[index];
+    dragElement(element);
+}
 
 function dragElement(elmnt) {
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
@@ -60,6 +60,9 @@ function dragElement(elmnt) {
     // get the mouse cursor position at startup:
     pos3 = e.clientX;
     pos4 = e.clientY;
+    newZ = getStyle ( elmnt.id , "z-index" );
+    console.log("element:", elmnt, " z: ", newZ)
+    elmnt.style.zIndex = parseInt(newZ) + 2
     document.onmouseup = closeDragElement;
     // call a function whenever the cursor moves:
     document.onmousemove = elementDrag;
@@ -83,6 +86,21 @@ function dragElement(elmnt) {
     document.onmouseup = null;
     document.onmousemove = null;
   }
+  function getStyle(el,styleProp)
+{
+    var x = document.getElementById(el);
+
+    if (window.getComputedStyle)
+    {
+        var y = document.defaultView.getComputedStyle(x,null).getPropertyValue(styleProp); 
+    }  
+    else if (x.currentStyle)
+    {
+        var y = x.currentStyle[styleProp];
+    }                     
+
+    return y;
+}
 }
 </script>
 
