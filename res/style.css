@@ -1,0 +1,50 @@
+.movable {
+    position: absolute;
+    z-index: 9;
+    background-color: #f1f1f1;
+    text-align: center;
+    border: 1px solid #d3d3d3;
+}
+
+.movableheader {
+    padding: 10px;
+    cursor: move;
+    z-index: 10;
+    background-color: #2196F3;
+    color: #fff;
+}
+
+html {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.central_stage {
+    background-color: beige;
+    margin: auto;
+    padding: 0;
+    aspect-ratio: 1 / 1;
+    height: 100vh;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 5fr;
+}
+
+.title {
+    height: 100px;
+}
+
+.monitor {
+    aspect-ratio: 4 / 3;
+    background: gold;
+    overflow: hidden;
+}

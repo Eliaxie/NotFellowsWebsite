@@ -1,108 +1,38 @@
 <!DOCTYPE html>
 <html>
-<style>
-.mydiv {
-  position: absolute;
-  z-index: 9;
-  background-color: #f1f1f1;
-  text-align: center;
-  border: 1px solid #d3d3d3;
-}
 
-.mydivheader {
-  padding: 10px;
-  cursor: move;
-  z-index: 10;
-  background-color: #2196F3;
-  color: #fff;
-}
-</style>
+<head>
+  <link rel="stylesheet" href="./res/style.css">
+</head>
+
 <body>
 
-<h1>Draggable DIV Element</h1>
+  <!-- <h1>Draggable DIV Element</h1>
 
-<p>Click and hold the mouse button down while moving the DIV element</p>
+  <p>Click and hold the mouse button down while moving the DIV element</p> -->
 
-<div id="mydiv" class="mydiv", style="z-index: 10">
-  <div id="mydivheader" class="mydivheader">Click here to move</div>
-  <p>Move</p>
-  <p>this</p>
-  <p>DIV</p>
-</div>
-<div id="mydiv2" class="mydiv">
-    <div id="mydiv2header" class="mydivheader">Click here to move</div>
-    <p>Move</p>
-    <p>this</p>
-    <p>DIV</p>
+  <div class="central_stage">
+    <div class="title">Logo</div>
+    <div class="monitor_container">
+      <div class="monitor">
+        <div id="movable" class="movable" , style="z-index: 10">
+          <div id="movableheader" class="movableheader">Click here to move</div>
+          <p>Move</p>
+          <p>this</p>
+          <p>DIV</p>
+        </div>
+        <div id="movable2" class="movable">
+          <div id="movable2header" class="movableheader">Click here to move</div>
+          <p>Move</p>
+          <p>this</p>
+          <p>DIV</p>
+        </div>
+      </div>
+    </div>
   </div>
 
-<script>
-//Make the DIV element draggagle:
-elements = document.getElementsByClassName("mydiv")
-for (let index = 0; index < elements.length; index++) {
-    const element = elements[index];
-    dragElement(element);
-}
-
-function dragElement(elmnt) {
-  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-  if (document.getElementById(elmnt.id + "header")) {
-    /* if present, the header is where you move the DIV from:*/
-    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
-  } else {
-    /* otherwise, move the DIV from anywhere inside the DIV:*/
-    elmnt.onmousedown = dragMouseDown;
-  }
-
-  function dragMouseDown(e) {
-    e = e || window.event;
-    e.preventDefault();
-    // get the mouse cursor position at startup:
-    pos3 = e.clientX;
-    pos4 = e.clientY;
-    newZ = getStyle ( elmnt.id , "z-index" );
-    console.log("element:", elmnt, " z: ", newZ)
-    elmnt.style.zIndex = parseInt(newZ) + 2
-    document.onmouseup = closeDragElement;
-    // call a function whenever the cursor moves:
-    document.onmousemove = elementDrag;
-  }
-
-  function elementDrag(e) {
-    e = e || window.event;
-    e.preventDefault();
-    // calculate the new cursor position:
-    pos1 = pos3 - e.clientX;
-    pos2 = pos4 - e.clientY;
-    pos3 = e.clientX;
-    pos4 = e.clientY;
-    // set the element's new position:
-    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
-    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
-  }
-
-  function closeDragElement() {
-    /* stop moving when mouse button is released:*/
-    document.onmouseup = null;
-    document.onmousemove = null;
-  }
-  function getStyle(el,styleProp)
-{
-    var x = document.getElementById(el);
-
-    if (window.getComputedStyle)
-    {
-        var y = document.defaultView.getComputedStyle(x,null).getPropertyValue(styleProp); 
-    }  
-    else if (x.currentStyle)
-    {
-        var y = x.currentStyle[styleProp];
-    }                     
-
-    return y;
-}
-}
+</body>
+<script src="./res/js.js">
 </script>
 
-</body>
 </html>
