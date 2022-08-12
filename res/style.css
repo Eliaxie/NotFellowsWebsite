@@ -14,21 +14,131 @@
     color: #fff;
 }
 
+.window {
+    background-color: #fff;
+    border: .1em solid #000;
+    flex-direction: column;
+    font-family: Inconsolata, Menlo, Chicago, Geneva;
+    margin: 1rem;
+    min-width: 320px;
+    overflow: hidden;
+}
+
+.details-bar {
+    border: .1rem solid #000;
+    border-top-width: 0.1rem;
+    border-right-width: 0.1rem;
+    border-bottom-width: 0.1rem;
+    border-left-width: 0.1rem;
+    border-width: .1rem 0;
+    font-weight: 100;
+    padding: .4rem .8rem;
+}
+
+.details-bar,
+.separator {
+    display: flex;
+    flex: none;
+    flex-direction: row;
+    font-size: 1rem;
+    justify-content: space-between;
+}
+
+.title-bar button {
+    background-color: #fff;
+    border: 4px solid #000;
+    cursor: pointer;
+    display: block;
+    height: 40px;
+    margin: 0 .2rem;
+    position: relative;
+    transform: scale(.5);
+    width: 40px;
+}
+
+.title-bar .title {
+    background: #fff;
+    cursor: default;
+    font-family: Chicago_12;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 0 auto;
+    padding: 0 .5em;
+    text-align: center;
+}
+
+.title-bar button {
+    background-color: #fff;
+    border: 4px solid #000;
+    cursor: pointer;
+    display: block;
+    height: 40px;
+    margin: 0 .2rem;
+    position: relative;
+    transform: scale(.5);
+    width: 40px;
+}
+
+.window-pane {
+    font-size: 18px;
+    height: 100%;
+    letter-spacing: -.025em;
+    overflow-y: scroll;
+    padding: 1rem 2rem;
+}
+
+.title-bar {
+    align-items: center;
+    background: linear-gradient(#000 50%, transparent 0);
+    background-size: auto;
+    background-clip: border-box;
+    background-clip: content-box;
+    background-size: 6.6666666667% 13.3333333333%;
+    display: flex;
+    flex: none;
+}
+
 html {
     height: 100%;
     padding: 0;
     margin: 0;
+    overflow: hidden;
+}
+
+.master_container {
+    width: 100vw;
+    overflow: hidden;
+}
+
+.mainLogo {
+    height: 42px;
+    width: 263px;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 body {
-    width: 100%;
+    min-height: 100vh;
+    min-height: fill-available;
+    min-height: -webkit-fill-available;
+}
+
+html {
+    height: fill-available;
+    height: -webkit-fill-available;
+}
+
+
+body {
+    width: 100vw;
     height: 100%;
     padding: 0;
     margin: 0;
+    background-color: #1E1E1E;
 }
 
 .central_stage {
-    background-color: beige;
     margin: auto;
     padding: 0;
     aspect-ratio: 1 / 1;
@@ -36,15 +146,55 @@ body {
     overflow: hidden;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 5fr;
+    grid-template-rows: 1fr 3fr;
+    position: relative;
 }
 
-.title {
-    height: 100px;
+.desktop {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-auto-flow: column;
+    padding: 10px;
+}
+
+.desktop-icon {
+    display: grid;
+    grid-template-rows: 2fr 1fr;
+}
+
+.icon {
+    width: 80%;
+    height: 80%;
+    margin: auto;
+}
+
+.title_header {
+    min-height: 100px;
+    display: grid;
 }
 
 .monitor {
     aspect-ratio: 4 / 3;
-    background: gold;
     overflow: hidden;
+    background-image: url(./img/Mac.svg);
+    background-size: cover;
+    margin-top: auto;
+    margin-bottom: 0px;
+    display: grid;
+}
+
+.monitor_container {
+    display: grid;
+}
+
+.screen {
+    width: 70.5%;
+    height: 59.5%;
+    margin: auto;
+
+    background: radial-gradient(52.64% 103.84% at 50% 15.65%, rgba(255, 254, 237, 0.318) 0%, rgba(255, 255, 255, 0) 100%)
+        /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
+    ;
+    border-radius: 26px;
 }

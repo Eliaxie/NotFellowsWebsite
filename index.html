@@ -1,38 +1,51 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-  <link rel="stylesheet" href="./res/style.css">
-</head>
-
-<body>
-
-  <!-- <h1>Draggable DIV Element</h1>
-
-  <p>Click and hold the mouse button down while moving the DIV element</p> -->
-
-  <div class="central_stage">
-    <div class="title">Logo</div>
-    <div class="monitor_container">
-      <div class="monitor">
-        <div id="movable" class="movable" , style="z-index: 10">
-          <div id="movableheader" class="movableheader">Click here to move</div>
-          <p>Move</p>
-          <p>this</p>
-          <p>DIV</p>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./res/style.css">
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <!-- <h1>Draggable DIV Element</h1><p>Click and hold the mouse button down while moving the DIV element</p> -->
+    <div class="master_container">
+      <div class="central_stage">
+        <div class="title_header">
+          <img src="/res/img/MainLogo.svg" alt="Main Logo" class="mainLogo">
         </div>
-        <div id="movable2" class="movable">
-          <div id="movable2header" class="movableheader">Click here to move</div>
-          <p>Move</p>
-          <p>this</p>
-          <p>DIV</p>
+        <div class="monitor_container">
+          <div class="monitor">
+            <div class="screen">
+              <div id="movable2" class="movable">
+                <div class="window">
+                  <div class="title-bar" id="movable2header">
+                    <button class="close">
+                      <img src="./res/img/icons/Close.svg" alt="*">
+                    </button>
+                    <h1 class="title">Window With Details</h1>
+                    <button class="resize"></button>
+                  </div>
+                  <div class="details-bar">
+                    <span>some</span>
+                    <span>more</span>
+                    <span>details</span>
+                  </div>
+                  <div class="window-pane"> Woo I got a details bar. </div>
+                </div>
+              </div>
+              <div class="desktop">
+                <div class="desktop-icon">
+                  <img src="/res/img/icons/joinus-desktop-icon.svg" alt="Icon" class="icon"> Join Us
+                </div>
+                <div class="desktop-icon">
+                  <img src="/res/img/icons/manifest-desktop-icon.svg" alt="Icon" class="icon"> Manifest
+                </div>
+              </div>
+              <!-- <div id="movable" class="movable" , style="z-index: 10"><div id="movableheader" class="movableheader">Click here to move</div><p>Move</p><p>this</p><p>DIV</p></div> -->
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-
-</body>
-<script src="./res/js.js">
-</script>
-
+  </body>
+  <script src="./res/js.js"></script>
 </html>
