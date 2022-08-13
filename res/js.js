@@ -1,19 +1,43 @@
 inFocus = document.getElementById("movable")
 elements = document.getElementsByClassName("movable")
+buttons = document.getElementsByTagName("button")
+// manifest_button_resize = document.getElementById("manifest_resize")
+// manifest_button_resize.onclick = resizeWindow
+// function resizeWindow(e) {
+//     e = e || window.event;
+//     e.preventDefault();
+//     manifest = document.getElementById("movable2")
+//     manifest.style.top = (0) + "px";
+//     manifest.style.left = (0) + "px";
+//     manifest.style.width = (100) + "%";
+//     manifest.style.minHeight = (100) + "%";
+// }
+
+activateWindows(buttons)
+
 for (let index = 0; index < elements.length; index++) {
     const element = elements[index];
     dragElement(element);
 }
 
+function activateWindows(buttons) {
+    var parents = []
+    for (let index = 0; index < buttons.length; index++) {
+        console.log(buttons[index].parentElement.parentElement.parentElement)
+    }
+}
+
+
 function dragElement(elmnt) {
     var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-    if (document.getElementById(elmnt.id + "header")) {
-        /* if present, the header is where you move the DIV from:*/
-        document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
-    } else {
-        /* otherwise, move the DIV from anywhere inside the DIV:*/
-        elmnt.onmousedown = dragMouseDown;
+    window.onresize = resetElement
+
+    if (!checkAspectRatio()) {
+        return
     }
+
+    setHooks()
+
 
     function dragMouseDown(e) {
         e = e || window.event;
@@ -31,6 +55,33 @@ function dragElement(elmnt) {
         document.onmousemove = elementDrag;
     }
 
+    function resetElement(e) {
+        e = e || window.event;
+        if (!checkAspectRatio()) {
+            setHooks(true)
+            return
+        } else {
+            setHooks()
+        }
+        pos1 = 0;
+        pos2 = 0;
+        pos3 = 0;
+        pos4 = 0;
+        elmnt.style.top = (elmnt.parentElement.offsetTop) + "px";
+        elmnt.style.left = (elmnt.parentElement.offsetLeft) + "px";
+        elementDrag(e)
+    }
+
+    function setHooks(reset) {
+        if (document.getElementById(elmnt.id + "header")) {
+            /* if present, the header is where you move the DIV from:*/
+            document.getElementById(elmnt.id + "header").onmousedown = reset ? null : dragMouseDown;
+        } else {
+            /* otherwise, move the DIV from anywhere inside the DIV:*/
+            elmnt.onmousedown = reset ? null : dragMouseDown;
+        }
+    }
+
     function elementDrag(e) {
         e = e || window.event;
         e.preventDefault();
@@ -39,22 +90,29 @@ function dragElement(elmnt) {
         pos2 = pos4 - e.clientY;
         pos3 = e.clientX;
         pos4 = e.clientY;
-        if (elmnt.offsetTop - pos2 + elmnt.offsetHeight >= elmnt.parentElement.offsetTop + elmnt.parentElement.offsetHeight) {
-            elmnt.style.top = (elmnt.parentElement.offsetTop + elmnt.parentElement.offsetHeight - elmnt.offsetHeight) + "px";
-        } else if (elmnt.offsetTop - pos2 <= elmnt.parentElement.offsetTop) {
-            elmnt.style.top = (elmnt.parentElement.offsetTop) + "px";
+
+
+        if (elmnt.offsetTop - pos2 + elmnt.offsetHeight >= elmnt.parentElement.offsetHeight) {
+            elmnt.style.top = (elmnt.parentElement.offsetHeight - elmnt.offsetHeight) + "px";
+        } else if (elmnt.offsetTop - pos2 <= 0) {
+            elmnt.style.top = (0) + "px";
         } else {
             elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
         }
 
-        if (elmnt.offsetLeft - pos1 + elmnt.offsetWidth >= elmnt.parentElement.offsetLeft + elmnt.parentElement.offsetWidth) {
-            elmnt.style.left = (elmnt.parentElement.offsetLeft + elmnt.parentElement.offsetWidth - elmnt.offsetWidth) + "px";
-        } else if (elmnt.offsetLeft - pos1 <= elmnt.parentElement.offsetLeft) {
-            elmnt.style.left = (elmnt.parentElement.offsetLeft) + "px";
+        if (elmnt.offsetLeft - pos1 + elmnt.offsetWidth >= elmnt.parentElement.offsetWidth) {
+            elmnt.style.left = (elmnt.parentElement.offsetWidth - elmnt.offsetWidth) + "px";
+        } else if (elmnt.offsetLeft - pos1 <= 0) {
+            elmnt.style.left = (0) + "px";
         } else {
             elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
         }
 
+
+    }
+
+    function checkAspectRatio() {
+        return window.innerWidth / window.innerHeight >= 9 / 8 ? true : false
     }
 
     function closeDragElement() {

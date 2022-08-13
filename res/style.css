@@ -4,8 +4,8 @@
     background-color: #f1f1f1;
     text-align: center;
     border: 1px solid #d3d3d3;
-    width: 45%;
-    max-height: 30%;
+    width: 70%;
+    max-height: 60%;
     display: flex;
 }
 
@@ -18,7 +18,7 @@
 
 .window {
     background-color: #000;
-    border: 1px solid #fff;
+    border: 1px solid #000;
     color: #fff;
     flex-direction: column;
     font-family: Inconsolata, Menlo, Chicago, Geneva;
@@ -76,7 +76,7 @@
 }
 
 .window-pane {
-    font-size: 15px;
+    font-size: 1em;
     height: 100%;
     letter-spacing: -.025em;
     overflow-y: scroll;
@@ -137,13 +137,12 @@ body {
 .central_stage {
     margin: auto;
     padding: 0;
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 9 / 8;
     height: 100vh;
     overflow: hidden;
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 3fr;
     position: relative;
+    grid-template-rows: 1fr auto;
 }
 
 .desktop {
@@ -166,37 +165,91 @@ body {
 }
 
 .icon {
-    width: 80%;
-    height: 80%;
+    width: 75%;
+    height: 75%;
     margin: auto;
 }
 
 .title_header {
-    min-height: 100px;
     display: grid;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .monitor {
     aspect-ratio: 4 / 3;
     overflow: hidden;
-    background-image: url(./img/Mac.svg);
-    background-size: cover;
     margin-top: auto;
     margin-bottom: 0px;
     display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+
+.monitor_image {
+    background-image: url(./img/Mac.svg);
+    background-size: contain;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background-repeat: no-repeat;
 }
 
 .monitor_container {
     display: grid;
 }
 
-.screen {
-    width: 70.5%;
-    height: 59.5%;
-    margin: auto;
 
-    background: radial-gradient(52.64% 103.84% at 50% 15.65%, rgba(255, 254, 237, 0.318) 0%, rgba(255, 255, 255, 0) 100%)
-        /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
-    ;
+
+.screen {
+    position: relative;
+    width: 70.5%;
+    height: 60.1%;
+    margin: auto;
+    z-index: 1;
     border-radius: 26px;
+}
+
+@media (max-aspect-ratio: 9/8) {
+    .mainLogo {
+        margin: auto;
+    }
+
+    .screen {
+        margin-top: calc(0.16 * 80vh);
+        margin-left: calc(0.16 * 80vh);
+        height: calc(0.470 * 80vh)
+    }
+
+    .movable {
+        width: 76%;
+        max-height: 70%;
+    }
+
+    #movable2 {
+        margin-top: calc(-0.1 * 100vh) !important;
+        margin-left: calc(-0.07 * 100vh) !important;
+        top: auto !important;
+        left: auto !important;
+    }
+
+    .central_stage {
+        aspect-ratio: auto;
+        grid-template-rows: 2fr 7fr 2fr;
+    }
+
+    .monitor_image {
+        background-size: auto 64vh;
+    }
+
+    .monitor_container {
+        height: 100%;
+        align-content: baseline;
+        overflow: hidden;
+    }
+
+    .monitor {
+        aspect-ratio: auto;
+    }
 }
