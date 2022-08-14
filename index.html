@@ -47,6 +47,21 @@
                       leo faucibus, interdum pellentesque justo. </div></div>
                 </div>
               </div>
+              <div id="youtube" class="movable">
+                <div class="window">
+                  <div class="title-bar" id="youtubeheader">
+                    <button class="close">
+                      <img src="/res/img/icons/Close.svg" alt="*">
+                    </button>
+                    <h1 class="title">Coming soon!</h1>
+                    <button class="resize" id="manifest_resize">
+                      <img src="/res/img/icons/Expand.svg" alt="*">
+                    </button>
+                  </div>
+                  <div class="window-pane"><div class="window-pane-text">
+                      we don't have this yet! </div></div>
+                </div>
+              </div>
               <div id="join" class="movable">
                 <div class="window">
                   <div class="title-bar" id="joinheader">
@@ -61,51 +76,57 @@
                   <div class="window-pane"><div class="window-pane-text">
                       <form action="/api/subscribe" method="POST">
                         <div class="email_form">
-                          <div class="email_paragraph">You don’t want to miss
-                            out on what we’re up to</div>
+                          <div class="email_paragraph">...so you never miss out
+                            on the cool things we’re up to！</div>
                           <div class="email_insert">
                             <label for="email">Insert e-mail</label>
-                            <input type="email" name="email">
+                            <input type="email" name="email" id="email_field">
                           </div>
                           <div class="email_button">
                             <div class="email_button_inner">
-                              <button type="submit" class="email_button_inner2">OK</button>
+                              <button class="email_button_inner2"
+                                onclick="subscribe()">OK</button>
                             </div>
                           </div>
                         </div>
                       </form>
-                    </div></div>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div class="desktop">
                 <div class="desktop-icon" onclick="openWindow('join')">
                   <img src="/res/img/icons/joinus-desktop-icon.svg" alt="Icon"
-                    class="icon">
+                    class="icon icon_res">
                   <p class="icon_text">Join Us</p>
                 </div>
                 <div class="desktop-icon" onclick="openWindow('manifest')">
                   <img src="/res/img/icons/manifest-desktop-icon.svg" alt="Icon"
-                    class="icon">
+                    class="icon icon_res">
                   <p class="icon_text">Manifesto</p>
                 </div>
-                <div class="desktop-icon right-grid desktop_only">
+                <a class="desktop-icon right-grid desktop_only"
+                  href="https://twitter.com/notfellows">
                   <img src="/res/img/icons/followus.svg" alt="Icon"
                     class="icon">
                   <p class="icon_text">Follow us</p>
-                </div>
-                <div class="desktop-icon right-grid desktop_only">
+                </a>
+                <a class="desktop-icon right-grid desktop_only"
+                  onclick="openWindow('youtube')">
                   <img src="/res/img/icons/youtube.svg" alt="Icon" class="icon">
                   <p class="icon_text">Youtube</p>
-                </div>
-                <div class="desktop-icon right-grid desktop_only">
+                </a>
+                <a class="desktop-icon right-grid desktop_only"
+                  href="http://notfellows.substack.com/">
                   <img src="/res/img/icons/newsletter.svg" alt="Icon"
                     class="icon">
                   <p class="icon_text">Newsletter</p>
-                </div>
-                <div class="desktop-icon right-grid desktop_only">
+                </a>
+                <a class="desktop-icon right-grid desktop_only"
+                  href="http://notfellows.substack.com/">
                   <img src="/res/img/icons/ally.svg" alt="Icon" class="icon">
                   <p class="icon_text">Become an ally</p>
-                </div>
+                </a>
               </div>
               <!-- <div id="movable" class="movable" , style="z-index: 10"><div id="movableheader" class="movableheader">Click here to move</div><p>Move</p><p>this</p><p>DIV</p></div> -->
             </div>
@@ -129,7 +150,7 @@
           </div>
           <div class="mobile-icons">
             <img src="/res/img/icons/ally-green.svg" alt="Icon" class="icon">
-            <p class="icon_text">Ally with us</p>
+            <p class="icon_text">Become an ally</p>
           </div>
         </div>
       </div>

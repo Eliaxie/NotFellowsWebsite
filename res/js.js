@@ -78,13 +78,24 @@ function activateWindows(buttons) {
 function openWindow(id) {
     el = document.getElementById(id)
     el.style.display = "flex"
+    swapper(el)
 }
 
+
+inFocusLevel = 13
+inFocus = document.getElementById("manifest")
+
+function swapper(elmnt) {
+    if (inFocus != elmnt) {
+        inFocusLevel = inFocusLevel + 1
+        elmnt.style.zIndex = inFocusLevel
+        inFocus = elmnt
+    }
+}
 
 function dragElement(elmnt) {
     var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
     window.onresize = resetElement
-    inFocus = document.getElementById("manifest")
 
     if (!checkAspectRatio()) {
         return
@@ -93,11 +104,7 @@ function dragElement(elmnt) {
     setHooks()
 
     function swapWindow(e) {
-        if (inFocus != elmnt) {
-            newZ = getStyle(elmnt.id, "z-index") || getStyle(elmnt.id, "zIndex");
-            elmnt.style.zIndex = parseInt(newZ) + 2
-            inFocus = elmnt
-        }
+        swapper(elmnt)
     }
 
     function dragMouseDown(e) {
