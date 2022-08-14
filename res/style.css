@@ -58,6 +58,14 @@
     justify-content: space-between;
 }
 
+a,
+a:hover,
+a:focus,
+a:active {
+    text-decoration: none;
+    color: inherit;
+}
+
 .title-bar .title {
     background: #000;
     cursor: default;
