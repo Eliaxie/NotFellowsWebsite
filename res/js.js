@@ -14,7 +14,11 @@ for (let index = 0; index < elements.length; index++) {
 
 function activateWindows(buttons) {
     var parents = new Object();
+    console.log("activate windows on ", buttons)
     for (let index = 0; index < buttons.length; index++) {
+        if (buttons[index].classList[0] != "close" && buttons[index].classList[0] != "resize") {
+            continue
+        }
         movableWindow = buttons[index].parentElement.parentElement.parentElement
         if (parents[movableWindow.id] == null) {
             parents[movableWindow.id] = {
@@ -25,12 +29,14 @@ function activateWindows(buttons) {
                 fullscreen: false
             }
         }
+        console.log(buttons[index])
         if (buttons[index].classList[0] === "close") {
             parents[movableWindow.id].close = buttons[index]
         } else {
             parents[movableWindow.id].resize = buttons[index]
         }
     }
+    console.log(parents)
     for (var key in parents) {
         setHooks(parents[key])
     }
@@ -49,13 +55,13 @@ function activateWindows(buttons) {
             if (!element.fullscreen) {
                 el.style.top = (0) + "px";
                 el.style.left = (0) + "px";
-                el.style.width = (100) + "%";
+                el.style.maxWidth = (100) + "%";
                 el.style.minHeight = (100) + "%";
                 element.fullscreen = true
             } else {
                 el.style.top = "auto";
                 el.style.left = "auto";
-                el.style.width = "70%";
+                el.style.maxWidth = "70%";
                 el.style.minHeight = "auto";
                 element.fullscreen = false
             }
@@ -75,7 +81,6 @@ function activateWindows(buttons) {
 function openWindow(id) {
     el = document.getElementById(id)
     el.style.display = "flex"
-    console.log(el.style.display)
 }
 
 

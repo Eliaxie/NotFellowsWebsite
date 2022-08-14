@@ -4,7 +4,7 @@
     background-color: #f1f1f1;
     text-align: center;
     border: 1px solid #d3d3d3;
-    width: 70%;
+    max-width: 70%;
     max-height: 60%;
     display: none;
 }
@@ -118,6 +118,9 @@ body {
     min-height: 100vh;
     min-height: fill-available;
     min-height: -webkit-fill-available;
+    font-family: 'Riforma Trial';
+    font-style: normal;
+    font-weight: 400;
 }
 
 html {
@@ -145,10 +148,35 @@ body {
     grid-template-rows: 1fr auto;
 }
 
+
+/* Let's get this party started */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background: #000;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #000;
+    border: 1px solid #fff;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+    background: grey;
+}
+
 .desktop {
+    padding: 15px 3px 15px 3px;
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     grid-template-rows: repeat(4, 1fr);
+    grid-auto-rows: 1fr;
     grid-auto-flow: column;
     max-height: 100%;
 }
@@ -160,17 +188,17 @@ body {
 
 .icon_text {
     margin: 0;
-    padding: 2px;
+    padding: 0px 1px 0px 1px;
     color: #fff;
     background-color: #000;
     margin: auto;
     margin-top: 0;
-    font-size: 0.8em;
+    font-size: 0.65em;
 }
 
 .desktop-icon {
     display: grid;
-    grid-template-rows: 2fr 1fr;
+    grid-template-rows: 1fr 1fr;
     text-align: center;
 }
 
@@ -179,8 +207,8 @@ body {
 }
 
 .icon {
-    width: 75%;
-    height: 75%;
+    width: 45%;
+    height: auto;
     margin: auto;
 }
 
@@ -201,6 +229,26 @@ body {
     grid-template-rows: 1fr;
     cursor: copy;
 
+}
+
+.email_button_inner2 {
+    background: #000;
+    color: #fff;
+    border-radius: 5px;
+    border: 1px solid #fff;
+}
+
+input[type=email] {
+    background-color: #000;
+    color: white;
+    border: 1px solid;
+}
+
+.email_button_inner {
+    padding: 1px;
+    border: 3px solid #fff;
+    width: fit-content;
+    border-radius: 8px;
 }
 
 .monitor_image {
@@ -246,6 +294,31 @@ body {
     display: grid;
 }
 
+
+.input_email {
+    background: #000;
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+.email_paragraph {
+    padding: 0;
+    margin: 0;
+}
+
+.email_insert {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    margin: 10px 0 20px 0;
+    font-weight: 300;
+}
+
+.email_form {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr 1fr;
+}
+
 @media (max-aspect-ratio: 9/8) {
     .mainLogo {
         margin: auto;
@@ -257,6 +330,11 @@ body {
 
     .desktop_only {
         display: none;
+    }
+
+    .desktop-icon>.icon {
+        width: 70% !important;
+        padding: 3px
     }
 
     .screen {
@@ -276,6 +354,7 @@ body {
         margin-left: calc(-0.07 * 100vh) !important;
         top: auto !important;
         left: auto !important;
+        max-width: none !important;
     }
 
     .central_stage {
