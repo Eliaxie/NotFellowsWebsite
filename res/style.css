@@ -92,7 +92,7 @@
     background-size: auto;
     background-clip: border-box;
     background-clip: content-box;
-    background-size: 6.6666666667% 18.3333333333%;
+    background-size: 6.6666666667% 17.3333333333%;
     display: flex;
     flex: none;
     padding: 2px;
@@ -307,8 +307,9 @@ input[type=email] {
 }
 
 .mobile-icons {
-    text-align: center;
     display: grid;
+    grid-template-rows: 1fr 1fr;
+    text-align: center;
 }
 
 
@@ -346,6 +347,7 @@ input[type=email] {
 
     .mobile_only {
         display: grid;
+        padding-bottom: 50px;
     }
 
     .desktop_only {
