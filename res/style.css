@@ -18,7 +18,7 @@
 
 .window {
     background-color: #000;
-    border: 1px solid #000;
+    border: 1px solid #fff;
     color: #fff;
     flex-direction: column;
     font-family: Inconsolata, Menlo, Chicago, Geneva;
@@ -89,10 +89,14 @@
     background: linear-gradient(#fff 20%, transparent 0);
     background-size: auto;
     background-clip: border-box;
+    background-size: auto;
+    background-clip: border-box;
     background-clip: content-box;
-    background-size: 6.6666666667% 13.3333333333%;
+    background-size: 6.6666666667% 18.3333333333%;
     display: flex;
     flex: none;
+    padding: 2px;
+    border-bottom: 1px solid white;
 }
 
 html {
