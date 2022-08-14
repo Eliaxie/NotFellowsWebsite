@@ -42,7 +42,6 @@
     border-bottom-width: 0.1rem;
     border-left-width: 0.1rem;
     border-width: .1rem 0;
-    font-weight: 100;
     padding: .4rem .8rem;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -54,7 +53,6 @@
     display: flex;
     flex: none;
     flex-direction: row;
-    font-size: 0.5rem;
     justify-content: space-between;
 }
 
@@ -62,7 +60,7 @@
 .title-bar .title {
     background: #000;
     cursor: default;
-    font-size: 19px;
+    font-size: 15px;
     font-weight: 700;
     line-height: 1.1;
     margin: 0 auto;
@@ -85,10 +83,19 @@
     width: 16px;
 }
 
+a,
+a:hover,
+a:focus,
+a:active {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+
 .window-pane {
-    font-size: 17px;
+    font-size: 0.8em;
     height: 100%;
-    letter-spacing: -.025em;
     overflow-y: scroll;
     padding: 1rem 2rem;
     text-align: justify;
@@ -113,7 +120,7 @@ html {
     height: 100%;
     padding: 0;
     margin: 0;
-    overflow: hidden;
+    font-size: 15px;
 }
 
 .master_container {
