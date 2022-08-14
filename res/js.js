@@ -92,6 +92,13 @@ function dragElement(elmnt) {
 
     setHooks()
 
+    function swapWindow(e) {
+        if (inFocus != elmnt) {
+            newZ = getStyle(elmnt.id, "z-index") || getStyle(elmnt.id, "zIndex");
+            elmnt.style.zIndex = parseInt(newZ) + 2
+            inFocus = elmnt
+        }
+    }
 
     function dragMouseDown(e) {
         e = e || window.event;
@@ -99,11 +106,6 @@ function dragElement(elmnt) {
         // get the mouse cursor position at startup:
         pos3 = e.clientX;
         pos4 = e.clientY;
-        if (inFocus != elmnt) {
-            newZ = getStyle(elmnt.id, "z-index") || getStyle(elmnt.id, "zIndex");
-            elmnt.style.zIndex = parseInt(newZ) + 2
-            inFocus = elmnt
-        }
         document.onmouseup = closeDragElement;
         // call a function whenever the cursor moves:
         document.onmousemove = elementDrag;
@@ -127,13 +129,8 @@ function dragElement(elmnt) {
     }
 
     function setHooks(reset) {
-        if (document.getElementById(elmnt.id + "header")) {
-            /* if present, the header is where you move the DIV from:*/
-            document.getElementById(elmnt.id + "header").onmousedown = reset ? null : dragMouseDown;
-        } else {
-            /* otherwise, move the DIV from anywhere inside the DIV:*/
-            elmnt.onmousedown = reset ? null : dragMouseDown;
-        }
+        document.getElementById(elmnt.id + "header").onmousedown = reset ? null : dragMouseDown;
+        elmnt.onmousedown = reset ? null : swapWindow;
     }
 
     function elementDrag(e) {
