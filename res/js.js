@@ -14,7 +14,6 @@ for (let index = 0; index < elements.length; index++) {
 
 function activateWindows(buttons) {
     var parents = new Object();
-    console.log("activate windows on ", buttons)
     for (let index = 0; index < buttons.length; index++) {
         if (buttons[index].classList[0] != "close" && buttons[index].classList[0] != "resize") {
             continue
@@ -29,14 +28,12 @@ function activateWindows(buttons) {
                 fullscreen: false
             }
         }
-        console.log(buttons[index])
         if (buttons[index].classList[0] === "close") {
             parents[movableWindow.id].close = buttons[index]
         } else {
             parents[movableWindow.id].resize = buttons[index]
         }
     }
-    console.log(parents)
     for (var key in parents) {
         setHooks(parents[key])
     }
