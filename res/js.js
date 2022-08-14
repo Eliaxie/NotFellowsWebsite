@@ -3,15 +3,7 @@ elements = document.getElementsByClassName("movable")
 buttons = document.getElementsByTagName("button")
 // manifest_button_resize = document.getElementById("manifest_resize")
 // manifest_button_resize.onclick = resizeWindow
-// function resizeWindow(e) {
-//     e = e || window.event;
-//     e.preventDefault();
-//     manifest = document.getElementById("movable2")
-//     manifest.style.top = (0) + "px";
-//     manifest.style.left = (0) + "px";
-//     manifest.style.width = (100) + "%";
-//     manifest.style.minHeight = (100) + "%";
-// }
+
 
 activateWindows(buttons)
 
@@ -21,16 +13,76 @@ for (let index = 0; index < elements.length; index++) {
 }
 
 function activateWindows(buttons) {
-    var parents = []
+    var parents = new Object();
     for (let index = 0; index < buttons.length; index++) {
-        console.log(buttons[index].parentElement.parentElement.parentElement)
+        movableWindow = buttons[index].parentElement.parentElement.parentElement
+        if (parents[movableWindow.id] == null) {
+            parents[movableWindow.id] = {
+                movableWindow: movableWindow,
+                resize: null,
+                close: null,
+                active: false,
+                fullscreen: false
+            }
+        }
+        if (buttons[index].classList[0] === "close") {
+            parents[movableWindow.id].close = buttons[index]
+        } else {
+            parents[movableWindow.id].resize = buttons[index]
+        }
     }
+    for (var key in parents) {
+        setHooks(parents[key])
+    }
+
+    function setHooks(element) {
+        element.close.onclick = closeWindow
+        element.resize.onclick = resizeWindow
+
+        function resizeWindow(e) {
+            e = e || window.event;
+            e.preventDefault();
+            el = element.movableWindow
+            if (!checkAspectRatio()) {
+                return
+            }
+            if (!element.fullscreen) {
+                el.style.top = (0) + "px";
+                el.style.left = (0) + "px";
+                el.style.width = (100) + "%";
+                el.style.minHeight = (100) + "%";
+                element.fullscreen = true
+            } else {
+                el.style.top = "auto";
+                el.style.left = "auto";
+                el.style.width = "70%";
+                el.style.minHeight = "auto";
+                element.fullscreen = false
+            }
+        }
+
+        function closeWindow(e) {
+            e = e || window.event;
+            e.preventDefault();
+            el = element.movableWindow
+            el.style.display = "none"
+        }
+
+    }
+
+}
+
+function openWindow(id) {
+    el = document.getElementById(id)
+    el.style.display = "flex"
+    console.log(el.style.display)
 }
 
 
 function dragElement(elmnt) {
     var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
     window.onresize = resetElement
+    inFocus = document.getElementById("manifest")
 
     if (!checkAspectRatio()) {
         return
@@ -111,10 +163,6 @@ function dragElement(elmnt) {
 
     }
 
-    function checkAspectRatio() {
-        return window.innerWidth / window.innerHeight >= 9 / 8 ? true : false
-    }
-
     function closeDragElement() {
         /* stop moving when mouse button is released:*/
         document.onmouseup = null;
@@ -132,4 +180,8 @@ function dragElement(elmnt) {
 
         return y;
     }
+}
+
+function checkAspectRatio() {
+    return window.innerWidth / window.innerHeight >= 9 / 8 ? true : false
 }

@@ -15,7 +15,7 @@
         <div class="monitor_container">
           <div class="monitor">
             <div class="screen">
-              <div id="movable2" class="movable">
+              <div id="manifest" class="movable">
                 <div class="window">
                   <div class="title-bar" id="movable2header">
                     <button class="close">
@@ -29,14 +29,44 @@
                   <div class="window-pane"><div class="window-pane-text"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis consequat purus eros, a dapibus ligula lobortis vitae. Aliquam laoreet fermentum augue ac consectetur. Ut gravida neque metus, et sodales dolor tempor non. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Proin non tincidunt ipsum. Nam imperdiet velit tincidunt nibh eleifend pharetra. Morbi sit amet quam metus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris vel iaculis quam. Vivamus vulputate at justo quis tincidunt. Vivamus tincidunt tincidunt ornare. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Praesent gravida orci in felis venenatis lobortis. Maecenas tempor metus ut condimentum placerat. Morbi enim dolor, aliquam a varius vel, ultricies vitae ante. Praesent mi massa, scelerisque id leo faucibus, interdum pellentesque justo.  </div></div>
                 </div>
               </div>
+              <div id="join" class="movable">
+                <div class="window">
+                  <div class="title-bar" id="movable2header">
+                    <button class="close">
+                      <img src="./res/img/icons/Close.svg" alt="*">
+                    </button>
+                    <h1 class="title">not a manifesto2</h1>
+                    <button class="resize" id="manifest_resize">
+                      <img src="./res/img/icons/Expand.svg" alt="*">
+                    </button>
+                  </div>
+                  <div class="window-pane"><div class="window-pane-text"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis consequat purus eros, a dapibus ligula lobortis vitae. Aliquam laoreet fermentum augue ac consectetur. Ut gravida neque metus, et sodales dolor tempor non. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Proin non tincidunt ipsum. Nam imperdiet velit tincidunt nibh eleifend pharetra. Morbi sit amet quam metus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris vel iaculis quam. Vivamus vulputate at justo quis tincidunt. Vivamus tincidunt tincidunt ornare. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Praesent gravida orci in felis venenatis lobortis. Maecenas tempor metus ut condimentum placerat. Morbi enim dolor, aliquam a varius vel, ultricies vitae ante. Praesent mi massa, scelerisque id leo faucibus, interdum pellentesque justo.  </div></div>
+                </div>
+              </div>
               <div class="desktop">
-                <div class="desktop-icon">
+                <div class="desktop-icon" onclick="openWindow('join')">
                   <img src="/res/img/icons/joinus-desktop-icon.svg" alt="Icon" class="icon"> 
                   <p class="icon_text">Join Us</p>
                 </div>
-                <div class="desktop-icon">
+                <div class="desktop-icon" onclick="openWindow('manifest')">
                   <img src="/res/img/icons/manifest-desktop-icon.svg" alt="Icon" class="icon"> 
                   <p class="icon_text">Manifest</p>
+                </div>
+                <div class="desktop-icon right-grid">
+                  <img src="/res/img/icons/followus.svg" alt="Icon" class="icon"> 
+                  <p class="icon_text">Follow us</p>
+                </div>
+                <div class="desktop-icon right-grid">
+                  <img src="/res/img/icons/youtube.svg" alt="Icon" class="icon"> 
+                  <p class="icon_text">Youtube</p>
+                </div>
+                <div class="desktop-icon right-grid">
+                  <img src="/res/img/icons/newsletter.svg" alt="Icon" class="icon"> 
+                  <p class="icon_text">Newsletter</p>
+                </div>
+                <div class="desktop-icon right-grid">
+                  <img src="/res/img/icons/ally.svg" alt="Icon" class="icon"> 
+                  <p class="icon_text">Ally with us</p>
                 </div>
               </div>
               <!-- <div id="movable" class="movable" , style="z-index: 10"><div id="movableheader" class="movableheader">Click here to move</div><p>Move</p><p>this</p><p>DIV</p></div> -->
