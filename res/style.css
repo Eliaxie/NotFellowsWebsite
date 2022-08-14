@@ -1,3 +1,13 @@
+@font-face {
+    font-family: Riforma;
+    src: url(/res/fonts/Riforma/RiformaLLWebTrial-Medium.woff);
+}
+
+@font-face {
+    font-family: Chicago;
+    src: url(/res/fonts/Chicago/Chicago\ Normal.ttf);
+}
+
 .movable {
     position: absolute;
     z-index: 9;
@@ -21,7 +31,6 @@
     border: 1px solid #fff;
     color: #fff;
     flex-direction: column;
-    font-family: Inconsolata, Menlo, Chicago, Geneva;
     overflow: hidden;
     display: flex;
 }
@@ -52,13 +61,13 @@
 .title-bar .title {
     background: #000;
     cursor: default;
-    font-family: Chicago_12;
     font-size: 19px;
     font-weight: 700;
     line-height: 1.1;
     margin: 0 auto;
     padding: 0 .5em;
     text-align: center;
+    font-family: Chicago;
 }
 
 .title-bar button {
@@ -119,10 +128,10 @@ html {
 }
 
 body {
+    font-family: Riforma;
     min-height: 100vh;
     min-height: fill-available;
     min-height: -webkit-fill-available;
-    font-family: 'Riforma Trial';
     font-style: normal;
     font-weight: 400;
 }
