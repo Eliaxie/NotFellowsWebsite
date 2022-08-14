@@ -230,15 +230,40 @@ body {
     overflow: hidden;
 }
 
+.mobile_only {
+    display: none;
+}
+
+.footer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    display: none;
+}
+
+.mobile-icons {
+    text-align: center;
+    display: grid;
+}
+
 @media (max-aspect-ratio: 9/8) {
     .mainLogo {
         margin: auto;
     }
 
+    .mobile_only {
+        display: grid;
+    }
+
+    .desktop_only {
+        display: none;
+    }
+
     .screen {
         margin-top: calc(0.16 * 80vh);
         margin-left: calc(0.16 * 80vh);
-        height: calc(0.670 * 80vh)
+        height: calc(0.670 * 80vh);
+        overflow: visible
     }
 
     .movable {
