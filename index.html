@@ -59,23 +59,6 @@
                     </a></div>
                 </div>
               </div>
-              <div id="youtube" class="movable">
-                <div class="window">
-                  <div class="title-bar" id="youtubeheader">
-                    <button class="close">
-                      <img src="/res/img/icons/Close.svg" alt="*"
-                        class="window_button_icons">
-                    </button>
-                    <h1 class="title">Coming soon!</h1>
-                    <button class="resize" id="manifest_resize">
-                      <img src="/res/img/icons/Expand.svg" alt="*"
-                        class="window_button_icons">
-                    </button>
-                  </div>
-                  <div class="window-pane"><div class="window-pane-text">
-                      we don't have this yet! </div></div>
-                </div>
-              </div>
               <div id="join" class="movable">
                 <div class="window">
                   <div class="title-bar" id="joinheader">
@@ -108,7 +91,7 @@
                           </div>
                         </div>
                         <div class="success_form" id="success_form">
-                          You have successfully subscribed！
+                          You have successfully joined our mailing list！
                         </div>
                         <div class="success_form" id="broken_form">
                           Subscribe from here
@@ -157,12 +140,12 @@
               <div class="desktop">
 
                 <div class="desktop-icon" onclick="openWindow('join')">
-                  <img src="/res/img/icons/joinus-desktop-icon.svg" alt="Icon"
+                  <img id="desktop_joinus_icon" alt="Icon"
                     class="icon icon_res">
                   <p class="icon_text">Join Us</p>
                 </div>
                 <div class="desktop-icon" onclick="openWindow('manifest')">
-                  <img src="/res/img/icons/manifest-desktop-icon.svg" alt="Icon"
+                  <img id="desktop_manifest_icon" alt="Icon"
                     class="icon icon_res">
                   <p class="icon_text">Manifesto</p>
                 </div>
@@ -173,7 +156,8 @@
                   <p class="icon_text">Follow us</p>
                 </a>
                 <a class="desktop-icon right-grid desktop_only"
-                  onclick="openWindow('youtube')">
+                  href="https://www.youtube.com/channel/UC7f3Z-R81A5yQKFbSRHIc3w"
+                  target="_blank">
                   <img id="desktop_youtube_icon" alt="Icon" class="icon">
                   <p class="icon_text">Youtube</p>
                 </a>
@@ -196,16 +180,17 @@
           </div>
         </div>
         <div class="footer mobile_only">
-          <a class="mobile-icons">
+          <a class="mobile-icons" href="https://twitter.com/notfellows">
             <img src="/res/img/icons/followus-green.svg" alt="Icon"
               class="icon">
             <p class="icon_text">Follow us</p>
           </a>
-          <a class="mobile-icons">
+          <a class="mobile-icons"
+            href="https://www.youtube.com/channel/UC7f3Z-R81A5yQKFbSRHIc3w">
             <img src="/res/img/icons/youtube-green.svg" alt="Icon" class="icon">
             <p class="icon_text">Youtube</p>
           </a>
-          <a class="mobile-icons">
+          <a class="mobile-icons" href="http://notfellows.substack.com/">
             <img src="/res/img/icons/newsletter-green.svg" alt="Icon"
               class="icon">
             <p class="icon_text">Newsletter</p>

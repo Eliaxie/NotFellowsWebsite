@@ -77,11 +77,11 @@
     border: 0;
     padding: 0;
     display: block;
-    height: 1.5em;
+    height: 2em;
     margin: 0 .2rem;
     position: relative;
     transform: scale(.5);
-    width: 1.5em;
+    width: 2em;
 }
 
 a,
@@ -97,6 +97,14 @@ a:active {
     content: url(/res/img/icons/followus.svg);
 }
 
+#desktop_joinus_icon {
+    content: url(/res/img/icons/joinus-desktop-icon.svg);
+}
+
+#desktop_manifest_icon {
+    content: url(/res/img/icons/manifest-desktop-icon.svg);
+}
+
 #desktop_youtube_icon {
     content: url(/res/img/icons/youtube.svg);
 
@@ -110,6 +118,14 @@ a:active {
 #desktop_ally_icon {
     content: url(/res/img/icons/ally.svg);
 
+}
+
+#desktop_joinus_icon:hover {
+    content: url(/res/img/icons/joinus-desktop-icon-green.svg);
+}
+
+#desktop_manifest_icon:hover {
+    content: url(/res/img/icons/manifest-desktop-icon-green.svg);
 }
 
 #desktop_twitter_icon:hover {
@@ -136,7 +152,7 @@ button {
 }
 
 .window_button_icons {
-    height: 1.5em;
+    height: 2em;
 }
 
 .window-pane {
@@ -366,6 +382,7 @@ input[type=email] {
 
 .mobile_only {
     display: none;
+    margin-top: 10px;
 }
 
 .footer {
@@ -476,5 +493,18 @@ input[type=email] {
 
     .monitor {
         width: 100%;
+    }
+
+    .window_button_icons {
+        height: 3em;
+    }
+
+    .title-bar button {
+        height: 3em;
+        width: 3em;
+    }
+
+    .icon_text {
+        font-size: 11px;
     }
 }
