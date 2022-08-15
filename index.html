@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>notFellows</title>
-    <link rel="stylesheet" href="/res/style.css">
+    <link rel="stylesheet" target="_blank" href="/res/style.css">
   </head>
   <body>
     <!-- <h1>Draggable DIV Element</h1><p>Click and hold the mouse button down while moving the DIV element</p> -->
@@ -21,12 +21,13 @@
                   <div class="title-bar" id="manifestheader">
                     <button class="close">
                       <img src="/res/img/icons/Close.svg" alt="*"
-                        class="closeimg">
+                        class="window_button_icons">
                     </button>
                     <h1 class="title"><span style="text-decoration:
                         line-through">not</span> a manifesto</h1>
                     <button class="resize" id="manifest_resize">
-                      <img src="/res/img/icons/Expand.svg" alt="*">
+                      <img src="/res/img/icons/Expand.svg" alt="*"
+                        class="window_button_icons">
                     </button>
                   </div>
                   <div class="window-pane"><div class="window-pane-text"> Lorem
@@ -46,7 +47,16 @@
                       venenatis lobortis. Maecenas tempor metus ut condimentum
                       placerat. Morbi enim dolor, aliquam a varius vel,
                       ultricies vitae ante. Praesent mi massa, scelerisque id
-                      leo faucibus, interdum pellentesque justo. </div></div>
+                      leo faucibus, interdum pellentesque justo. </div>
+                    <a class="manifesto_button"
+                      target="_blank"
+                      href="https://notfellows.substack.com/subscribe">
+                      <div class="email_button">
+                        <div class="email_button_inner">
+                          <button class="email_button_inner2">notfellowsHQ</button>
+                        </div>
+                      </div>
+                    </a></div>
                 </div>
               </div>
               <div id="youtube" class="movable">
@@ -54,11 +64,12 @@
                   <div class="title-bar" id="youtubeheader">
                     <button class="close">
                       <img src="/res/img/icons/Close.svg" alt="*"
-                        class="closeimg">
+                        class="window_button_icons">
                     </button>
                     <h1 class="title">Coming soon!</h1>
                     <button class="resize" id="manifest_resize">
-                      <img src="/res/img/icons/Expand.svg" alt="*">
+                      <img src="/res/img/icons/Expand.svg" alt="*"
+                        class="window_button_icons">
                     </button>
                   </div>
                   <div class="window-pane"><div class="window-pane-text">
@@ -70,26 +81,68 @@
                   <div class="title-bar" id="joinheader">
                     <button class="close">
                       <img src="/res/img/icons/Close.svg" alt="*"
-                        class="closeimg">
+                        class="window_button_icons">
                     </button>
                     <h1 class="title">stay in touch</h1>
                     <button class="resize" id="manifest_resize">
-                      <img src="/res/img/icons/Expand.svg" alt="*">
+                      <img src="/res/img/icons/Expand.svg" alt="*"
+                        class="window_button_icons">
                     </button>
                   </div>
                   <div class="window-pane"><div class="window-pane-text">
-                      <form action="/api/subscribe" method="POST">
+                      <!-- <form>
                         <div class="email_form">
                           <div class="email_paragraph">...so you never miss out
                             on the cool things we’re up to！</div>
                           <div class="email_insert">
-                            <label for="email">Insert e-mail</label>
-                            <input type="email" name="email" id="email_field">
+                            <label for="email" class="email_label">Insert e-mail</label>
+                            <input type="email" name="email" id="email_field"
+                              placeholder="example@gmail.com">
+                            <div class="email_button">
+                              <div class="email_button_inner">
+                                <button class="email_button_inner2"
+                                  onclick="subscribe()">OK</button>
+                              </div>
+                            </div>
                           </div>
-                          <div class="email_button">
-                            <div class="email_button_inner">
-                              <button class="email_button_inner2"
-                                onclick="subscribe()">OK</button>
+                        </div>
+                      </form> -->
+                      <form
+                        action="https://gmail.us12.list-manage.com/subscribe/post?u=e44fbcc6e320d0175e880ccd4&amp;id=9b3659625c&amp;f_id=0059ade0f0"
+                        method="post" id="mc-embedded-subscribe-form"
+                        name="mc-embedded-subscribe-form" class="validate"
+                        novalidate>
+                        <div id="mc_embed_signup_scroll" class="email_form">
+                          <div class="email_paragraph">...so you never miss out
+                            on the cool things we’re up to！</div>
+                          <div class="mc-field-group">
+                            <label for="mce-EMAIL" class="email_label">Insert
+                              e-mail</label>
+                            <input type="email" value="" name="EMAIL"
+                              class="required email" id="mce-EMAIL"
+                              placeholder="example@gmail.com">
+                            <span id="mce-EMAIL-HELPERTEXT" class="helper_text"></span>
+                          </div>
+                          <div id="mce-responses" class="clear foot">
+                            <div class="response" id="mce-error-response"
+                              style="display:none"></div>
+                            <div class="response" id="mce-success-response"
+                              style="display:none"></div>
+                          </div> <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                          <div style="position: absolute; left: -5000px;"
+                            aria-hidden="true"><input type="text"
+                              name="b_e44fbcc6e320d0175e880ccd4_9b3659625c"
+                              tabindex="-1" value=""></div>
+                          <div class="optionalParent">
+                            <div class="clear foot">
+
+                              <div class="email_button">
+                                <div class="email_button_inner">
+                                  <input type="submit" value="OK"
+                                    name="subscribe" id="mc-embedded-subscribe"
+                                    class="email_button_inner2">
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -99,6 +152,7 @@
                 </div>
               </div>
               <div class="desktop">
+
                 <div class="desktop-icon" onclick="openWindow('join')">
                   <img src="/res/img/icons/joinus-desktop-icon.svg" alt="Icon"
                     class="icon icon_res">
@@ -110,25 +164,26 @@
                   <p class="icon_text">Manifesto</p>
                 </div>
                 <a class="desktop-icon right-grid desktop_only"
-                  href="https://twitter.com/notfellows">
-                  <img src="/res/img/icons/followus.svg" alt="Icon"
+                  target="_blank" href="https://twitter.com/notfellows">
+                  <img id="desktop_twitter_icon" alt="Icon"
                     class="icon">
                   <p class="icon_text">Follow us</p>
                 </a>
                 <a class="desktop-icon right-grid desktop_only"
                   onclick="openWindow('youtube')">
-                  <img src="/res/img/icons/youtube.svg" alt="Icon" class="icon">
+                  <img id="desktop_youtube_icon" alt="Icon" class="icon">
                   <p class="icon_text">Youtube</p>
                 </a>
                 <a class="desktop-icon right-grid desktop_only"
-                  href="http://notfellows.substack.com/">
-                  <img src="/res/img/icons/newsletter.svg" alt="Icon"
+                  target="_blank" href="http://notfellows.substack.com/">
+                  <img id="desktop_newsletter_icon" alt="Icon"
                     class="icon">
                   <p class="icon_text">Newsletter</p>
                 </a>
                 <a class="desktop-icon right-grid desktop_only"
-                  href="http://notfellows.substack.com/">
-                  <img src="/res/img/icons/ally.svg" alt="Icon" class="icon">
+                  target="_blank"
+                  href="https://krfevdefzd8.typeform.com/to/QUaKmCGW">
+                  <img id="desktop_ally_icon" alt="Icon" class="icon">
                   <p class="icon_text">Become an ally</p>
                 </a>
               </div>
@@ -138,24 +193,25 @@
           </div>
         </div>
         <div class="footer mobile_only">
-          <div class="mobile-icons">
+          <a class="mobile-icons">
             <img src="/res/img/icons/followus-green.svg" alt="Icon"
               class="icon">
             <p class="icon_text">Follow us</p>
-          </div>
-          <div class="mobile-icons">
+          </a>
+          <a class="mobile-icons">
             <img src="/res/img/icons/youtube-green.svg" alt="Icon" class="icon">
             <p class="icon_text">Youtube</p>
-          </div>
-          <div class="mobile-icons">
+          </a>
+          <a class="mobile-icons">
             <img src="/res/img/icons/newsletter-green.svg" alt="Icon"
               class="icon">
             <p class="icon_text">Newsletter</p>
-          </div>
-          <div class="mobile-icons">
+          </a>
+          <a class="mobile-icons"
+            target="_blank" href="https://krfevdefzd8.typeform.com/to/QUaKmCGW">
             <img src="/res/img/icons/ally-green.svg" alt="Icon" class="icon">
             <p class="icon_text">Become an ally</p>
-          </div>
+          </a>
         </div>
       </div>
     </div>

@@ -1,4 +1,3 @@
-inFocus = document.getElementById("movable")
 elements = document.getElementsByClassName("movable")
 buttons = document.getElementsByTagName("button")
 // manifest_button_resize = document.getElementById("manifest_resize")
@@ -68,11 +67,17 @@ function activateWindows(buttons) {
             e = e || window.event;
             e.preventDefault();
             el = element.movableWindow
-            el.style.display = "none"
+            closeWindowUtil(el)
         }
 
     }
 
+}
+
+function closeWindowUtil(element) {
+    if (element != null) {
+        element.style.display = "none"
+    }
 }
 
 function openWindow(id) {
@@ -81,6 +86,16 @@ function openWindow(id) {
     swapper(el)
 }
 
+document.addEventListener('keydown', closeWindowOnEscape);
+
+
+function closeWindowOnEscape(e) {
+    e = e || window.event;
+    console.log(e)
+    if (e.keyCode === 27) {
+        closeWindowUtil(inFocus)
+    }
+};
 
 inFocusLevel = 13
 inFocus = document.getElementById("manifest")
