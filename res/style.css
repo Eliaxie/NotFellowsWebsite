@@ -307,6 +307,7 @@ body {
     color: #fff;
     border-radius: 5px;
     border: 1px solid #fff;
+    cursor: pointer;
 }
 
 .email_button {
@@ -404,6 +405,10 @@ input[type=email] {
 .email_label {
     margin: auto 0 auto 0;
 
+}
+
+.email_button {
+    cursor: pointer;
 }
 
 .email_form {
