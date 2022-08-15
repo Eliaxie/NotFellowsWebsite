@@ -37,7 +37,7 @@ function updateEmailForm(result) {
     console.log(result)
     if (result == "Bad Request") {
         console.log(1)
-        document.getElementById("email_label").innerHTML = "Email broken!"
+        document.getElementById("email_label").innerHTML = "Email format is invalid！"
     } else if (result == "OK") {
         console.log(2)
         document.getElementById("success_form").style.display = "inline"
