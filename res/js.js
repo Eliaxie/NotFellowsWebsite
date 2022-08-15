@@ -30,7 +30,12 @@ function subscribe() {
     fetch("https://notfellowsbackend.herokuapp.com", requestOptions)
         .then(response => response.text())
         .then(result => updateEmailForm(result))
-        .catch(error => console.log('error', error))
+        .catch(error => handleEmailError(error))
+}
+
+function handleEmailError(error) {
+    console.log('error', error)
+    window.location.replace("https://notfellows.substack.com/subscribe");
 }
 
 function updateEmailForm(result) {
