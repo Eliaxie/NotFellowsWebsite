@@ -91,7 +91,9 @@ a:active {
     color: inherit;
 }
 
-
+.closeimg {
+    height: 15px;
+}
 
 .window-pane {
     font-size: 0.8em;
