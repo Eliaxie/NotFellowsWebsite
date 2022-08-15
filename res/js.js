@@ -11,6 +11,28 @@ for (let index = 0; index < elements.length; index++) {
     dragElement(element);
 }
 
+function subscribe() {
+    console.log("subscribe on, ", document.getElementById('email_field').value)
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    var raw = JSON.stringify({
+        "email": document.getElementById('email_field').value
+    });
+
+    var requestOptions = {
+        method: 'POST',
+        headers: myHeaders,
+        body: raw,
+        redirect: 'follow'
+    };
+
+    fetch("https://notfellowsbackend.herokuapp.com", requestOptions)
+        .then(response => response.text())
+        .then(result => console.log(result))
+        .catch(error => console.log('error', error));
+}
+
 function activateWindows(buttons) {
     var parents = new Object();
     for (let index = 0; index < buttons.length; index++) {
