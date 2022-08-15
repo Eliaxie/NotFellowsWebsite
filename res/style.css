@@ -302,6 +302,10 @@ body {
 
 }
 
+.success_form {
+    display: none;
+}
+
 .email_button_inner2 {
     background: #000;
     color: #fff;

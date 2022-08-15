@@ -29,8 +29,25 @@ function subscribe() {
 
     fetch("https://notfellowsbackend.herokuapp.com", requestOptions)
         .then(response => response.text())
-        .then(result => console.log(result))
-        .catch(error => console.log('error', error));
+        .then(result => updateEmailForm(result))
+        .catch(error => console.log('error', error))
+}
+
+function updateEmailForm(result) {
+    console.log(result)
+    if (result == "Bad Request") {
+        console.log(1)
+        document.getElementById("email_label").innerHTML = "Email broken!"
+    } else if (result == "OK") {
+        console.log(2)
+        document.getElementById("success_form").style.display = "inline"
+        document.getElementById("email_form").style.display = "none"
+    }
+    else {
+        console.log(3)
+        document.getElementById("email_label").innerHTML = "Email already subscribed！"
+        document.getElementById("email_label").style.color = "red"
+    }
 }
 
 function activateWindows(buttons) {
