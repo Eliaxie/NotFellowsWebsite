@@ -113,7 +113,6 @@ document.addEventListener('keydown', closeWindowOnEscape);
 
 function closeWindowOnEscape(e) {
     e = e || window.event;
-    console.log(e)
     if (e.keyCode === 27) {
         closeWindowUtil(inFocus)
     }
