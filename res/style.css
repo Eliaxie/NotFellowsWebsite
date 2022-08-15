@@ -4,6 +4,12 @@
 }
 
 @font-face {
+    font-family: RiformaHeavy;
+    src: url(/res/fonts/Riforma/RiformaLLWebTrial-Heavy.woff);
+}
+
+
+@font-face {
     font-family: Chicago;
     src: url(/res/fonts/Chicago/Chicago\ Normal.ttf);
 }
@@ -157,6 +163,11 @@ button {
 
 .window-pane {
     display: grid;
+}
+
+.link_window {
+    text-decoration: underline;
+    font-family: RiformaHeavy;
 }
 
 .window-pane {
