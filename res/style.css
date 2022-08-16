@@ -540,8 +540,6 @@ input[type=email] {
         font-size: 11px;
     }
 
-    #joinus_icon {}
-
     #stayintouch_icon {
         grid-column: 1;
         grid-row: 2;
