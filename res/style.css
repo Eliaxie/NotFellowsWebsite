@@ -126,6 +126,16 @@ a:active {
 
 }
 
+#desktop_email_icon {
+    content: url(/res/img/icons/email-desktop-icon.svg);
+
+}
+
+#desktop_email_icon:hover {
+    content: url(/res/img/icons/email-desktop-icon-green.svg);
+
+}
+
 #desktop_joinus_icon:hover {
     content: url(/res/img/icons/joinus-desktop-icon-green.svg);
 }
@@ -189,7 +199,6 @@ button {
     background-size: 6.6666666667% 17.3333333333%;
     display: flex;
     flex: none;
-    padding: 2px;
     border-bottom: 1px solid white;
 }
 
@@ -343,6 +352,8 @@ body {
 
 .email_button {
     margin: auto;
+    margin-right: 0px;
+
 }
 
 input[type=email] {
