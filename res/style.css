@@ -489,14 +489,14 @@ input[type=email] {
     .screen {
         margin-top: calc(0.16 * 80vh);
         margin-left: calc(0.16 * 80vh);
-        margin-right: calc(0.28 * 80vh);
+        aspect-ratio: 4/3;
         width: auto;
-        height: calc(0.670 * 80vh);
+        height: calc(0.470 * 80vh);
         overflow: visible
     }
 
     .movable {
-        max-height: 100%;
+        max-height: 120%;
     }
 
     .movable {
@@ -504,7 +504,7 @@ input[type=email] {
         margin-left: calc(-0.09 * 100vh) !important;
         top: auto !important;
         left: auto !important;
-        max-width: none !important;
+        max-width: calc(.38 * 100vh);
         margin-right: calc(.04 * 100vh);
     }
 
