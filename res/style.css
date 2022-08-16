@@ -489,6 +489,8 @@ input[type=email] {
     .screen {
         margin-top: calc(0.16 * 80vh);
         margin-left: calc(0.16 * 80vh);
+        margin-right: calc(0.28 * 80vh);
+        width: auto;
         height: calc(0.670 * 80vh);
         overflow: visible
     }
