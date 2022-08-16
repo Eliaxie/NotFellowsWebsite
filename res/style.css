@@ -14,6 +14,7 @@
     src: url(/res/fonts/Chicago/Chicago\ Normal.ttf);
 }
 
+
 .movable {
     position: absolute;
     z-index: 9;
@@ -471,6 +472,11 @@ input[type=email] {
         padding-bottom: 50px;
     }
 
+
+    .desktop {
+        grid-template-columns: repeat(5, 1fr);
+    }
+
     .desktop_only {
         display: none;
     }
@@ -492,11 +498,12 @@ input[type=email] {
     }
 
     .movable {
-        margin-top: calc(-0.1 * 100vh) !important;
-        margin-left: calc(-0.07 * 100vh) !important;
+        margin-top: calc(-0.12 * 100vh) !important;
+        margin-left: calc(-0.09 * 100vh) !important;
         top: auto !important;
         left: auto !important;
         max-width: none !important;
+        margin-right: calc(.04 * 100vh);
     }
 
     .central_stage {
@@ -539,6 +546,12 @@ input[type=email] {
     }
 
     #manifesto_icon {
-        grid-column: 3;
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    #joinus_icon {
+        grid-column: 5;
+        grid-row: 1;
     }
 }

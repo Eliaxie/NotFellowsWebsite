@@ -1,8 +1,7 @@
 elements = document.getElementsByClassName("movable")
 buttons = document.getElementsByTagName("button")
-// manifest_button_resize = document.getElementById("manifest_resize")
-// manifest_button_resize.onclick = resizeWindow
-
+inFocusLevel = 13
+inFocus = document.getElementById("manifest")
 
 activateWindows(buttons)
 
@@ -81,6 +80,21 @@ function activateWindows(buttons) {
         setHooks(parents[key])
     }
 
+    initialPositions()
+
+    function initialPositions() {
+        manifest = document.getElementById("manifest")
+        manifest.style.display = "flex"
+        manifest.style.left = (manifest.parentElement.offsetWidth - manifest.offsetWidth) + "px";
+        stayintouch = document.getElementById("stayintouch")
+        stayintouch.style.display = "flex"
+        stayintouch.style.top = (stayintouch.parentElement.offsetHeight - stayintouch.offsetHeight) + "px";
+        if (!checkAspectRatio()) {
+            return
+        }
+        swapper(stayintouch)
+    }
+
     function setHooks(element) {
         element.close.onclick = closeWindow
         element.resize.onclick = resizeWindow
@@ -139,9 +153,6 @@ function closeWindowOnEscape(e) {
         closeWindowUtil(inFocus)
     }
 };
-
-inFocusLevel = 13
-inFocus = document.getElementById("manifest")
 
 function swapper(elmnt) {
     if (inFocus != elmnt) {
