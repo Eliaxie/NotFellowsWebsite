@@ -99,9 +99,6 @@ a:active {
     cursor: pointer;
 }
 
-.desktop-icon:hover {
-    color: #00E100 !important;
-}
 
 #desktop_twitter_icon {
     content: url(/res/img/icons/followus.svg);
