@@ -26,13 +26,6 @@
     display: none;
 }
 
-.movableheader {
-    padding: 10px;
-    cursor: move;
-    z-index: 10;
-    color: #000;
-}
-
 .window {
     background-color: #000;
     border: 1px solid #fff;
@@ -76,6 +69,7 @@
     padding: 0 .5em;
     text-align: center;
     font-family: Chicago;
+    cursor: default;
 }
 
 .title-bar button {
