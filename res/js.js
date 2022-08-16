@@ -12,6 +12,7 @@ for (let index = 0; index < elements.length; index++) {
 
 function subscribe() {
     console.log("subscribe on, ", document.getElementById('email_field').value)
+    document.getElementById("stayintouch").style.cursor = "progress";
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 
@@ -40,18 +41,16 @@ function handleEmailError(error) {
 function updateEmailForm(result) {
     console.log(result)
     if (result == "Bad Request") {
-        console.log(1)
         document.getElementById("email_label").innerHTML = "Email format is invalid！"
     } else if (result == "OK") {
-        console.log(2)
         document.getElementById("success_form").style.display = "inline"
         document.getElementById("email_form").style.display = "none"
     }
     else {
-        console.log(3)
         document.getElementById("email_label").innerHTML = "Email already subscribed！"
         document.getElementById("email_label").style.color = "red"
     }
+    document.getElementById("stayintouch").style.cursor = "auto";
 }
 
 function activateWindows(buttons) {

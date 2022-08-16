@@ -336,8 +336,6 @@ body {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
-    cursor: copy;
-
 }
 
 .success_form {
@@ -452,9 +450,6 @@ input[type=email] {
 
 }
 
-.email_button {
-    cursor: pointer;
-}
 
 .email_form {
     display: grid;
