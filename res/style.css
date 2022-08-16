@@ -474,7 +474,7 @@ input[type=email] {
 
 
     .desktop {
-        grid-template-columns: repeat(5, 1fr);
+        grid-template-columns: repeat(6, 1fr);
     }
 
     .desktop_only {
@@ -551,7 +551,7 @@ input[type=email] {
     }
 
     #joinus_icon {
-        grid-column: 5;
+        grid-column: 4;
         grid-row: 1;
     }
 }
