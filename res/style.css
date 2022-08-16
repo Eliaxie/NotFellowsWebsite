@@ -529,4 +529,15 @@ input[type=email] {
     .icon_text {
         font-size: 11px;
     }
+
+    #joinus_icon {}
+
+    #stayintouch_icon {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    #manifesto_icon {
+        grid-column: 3;
+    }
 }
