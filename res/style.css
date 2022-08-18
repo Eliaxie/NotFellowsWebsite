@@ -451,7 +451,7 @@ input[type=email] {
     grid-template-rows: 1fr 2fr;
 }
 
-@media (max-aspect-ratio: 9/8) {
+@media (max-aspect-ratio: 9/8) or (max-width: 810px) {
     .mainLogo {
         margin: auto;
     }
@@ -481,11 +481,12 @@ input[type=email] {
         aspect-ratio: 4/3;
         width: auto;
         height: calc(0.470 * 80vh);
-        overflow: visible
+        overflow: visible;
+        position: initial;
     }
 
     .movable {
-        max-height: 120%;
+        max-height: 70%;
     }
 
     .movable {
@@ -493,8 +494,10 @@ input[type=email] {
         margin-left: calc(-0.09 * 100vh) !important;
         top: auto !important;
         left: auto !important;
-        max-width: calc(.38 * 100vh);
+        max-width: 100%;
+        width: calc(.79 * 100vw);
         margin-right: calc(.04 * 100vh);
+        max-height: 50vh;
     }
 
     .central_stage {
