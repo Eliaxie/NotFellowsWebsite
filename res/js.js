@@ -87,13 +87,13 @@ function activateWindows(buttons) {
     function initialPositions() {
         manifest = document.getElementById("manifest")
         manifest.style.display = "flex"
-        manifest.style.left = (manifest.parentElement.offsetWidth - manifest.offsetWidth) + "px";
         stayintouch = document.getElementById("stayintouch")
         stayintouch.style.display = "flex"
-        stayintouch.style.top = (stayintouch.parentElement.offsetHeight - stayintouch.offsetHeight) + "px";
         if (!checkAspectRatio()) {
             return
         }
+        stayintouch.style.top = (stayintouch.parentElement.offsetHeight - stayintouch.offsetHeight) + "px";
+        manifest.style.left = (manifest.parentElement.offsetWidth - manifest.offsetWidth) + "px";
         swapper(stayintouch)
     }
 
@@ -260,5 +260,6 @@ function dragElement(elmnt) {
 }
 
 function checkAspectRatio() {
+    console.log("AS: ", window.innerWidth / window.innerHeight >= 9 / 8)
     return window.innerWidth / window.innerHeight >= 9 / 8 ? true : false
 }

@@ -451,7 +451,7 @@ input[type=email] {
     grid-template-rows: 1fr 2fr;
 }
 
-@media (max-aspect-ratio: 9/8) or (max-width: 810px) {
+@media (max-width: 810px), (max-aspect-ratio: 9/8) {
     .mainLogo {
         margin: auto;
     }
@@ -516,6 +516,10 @@ input[type=email] {
     }
 
     .monitor {
+        width: 100%;
+    }
+
+    .window {
         width: 100%;
     }
 
